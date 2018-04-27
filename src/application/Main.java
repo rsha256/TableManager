@@ -31,8 +31,8 @@ public class Main extends Application {
         Pane root = scaledPane.getContentPane();
 
         // add rectangles and make them draggable
-        for (int y = 0; y < 2; y++) {
-            for (int x = 0; x < 10; x++) {
+        for (double y = 3.5; y < 5.5; y++) {
+            for (int x = 2; x < 9; x++) {
                 Rectangle rect = new Rectangle(30, 30);
                 rect.setLayoutX(x*(rect.getWidth() + 10));
                 rect.setLayoutY(y*(rect.getHeight() + 10));

@@ -1,15 +1,13 @@
 package application;
 
-import java.io.IOException;
-
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import javafx.event.ActionEvent;
 import jfxtras.labs.scene.layout.ScalableContentPane;
 import jfxtras.labs.util.event.MouseControlUtil;
 
@@ -21,16 +19,14 @@ import jfxtras.labs.util.event.MouseControlUtil;
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws IOException {
-//        Parent root = FXMLLoader.load(getClass().getResource("view.fxml"));
-
+    public void start(Stage primaryStage) {
         // create a scalable content pane
         ScalableContentPane scaledPane = new ScalableContentPane();
 
         // use it's predefined content pane as root pane
         Pane root = scaledPane.getContentPane();
 
-        // add rectangles and make them draggable
+        // add placers and make them draggable
         for (double y = 3.5; y < 5.5; y++) {
             for (int x = 2; x < 9; x++) {
                 Rectangle rect = new Rectangle(30, 30);
@@ -48,6 +44,30 @@ public class Main extends Application {
         scene.getStylesheets().addAll(this.getClass().getResource("style.css").toExternalForm());
 
         root.setId("pane");
+
+        Button one = new Button("1");
+        Button two = new Button("2");
+        Button three = new Button("3");
+        Button four = new Button("4");
+        Button five = new Button("5");
+
+        two.setLayoutX(30);
+        three.setLayoutX(60);
+        four.setLayoutX(90);
+        five.setLayoutX(120);
+
+        root.getChildren().add(one);
+        root.getChildren().add(two);
+        root.getChildren().add(three);
+        root.getChildren().add(four);
+        root.getChildren().add(five);
+
+        // Below I process events with an anonymous event handler
+        one.setOnAction(
+                e -> {
+                    // When the button is clicked handle the event by calling on the calculateLoanPayment method in this class
+
+                });
 
         // setup the stage
         primaryStage.setTitle("TableManager");

@@ -7,7 +7,6 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-import javafx.event.ActionEvent;
 import jfxtras.labs.scene.layout.ScalableContentPane;
 import jfxtras.labs.util.event.MouseControlUtil;
 
@@ -64,10 +63,24 @@ public class Main extends Application {
 
         // Below I process events with an anonymous event handler
         one.setOnAction(
-                e -> {
-                    // When the button is clicked handle the event by calling on the calculateLoanPayment method in this class
+                e -> System.out.println("Table 1 should be free")
+        );
+        
+        two.setOnAction(
+                e -> System.out.println("Table 2 should be free")
+        );
 
-                });
+        three.setOnAction(
+                e -> System.out.println("Table 3 should be free")
+        );
+
+        four.setOnAction(
+                e -> System.out.println("Table 4 should be free")
+        );
+
+        five.setOnAction(
+                e -> System.out.println("Table 5 should be free")
+        );
 
         // setup the stage
         primaryStage.setTitle("TableManager");

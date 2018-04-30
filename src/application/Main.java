@@ -61,11 +61,10 @@ public class Main extends Application {
         root.getChildren().add(four);
         root.getChildren().add(five);
 
-        // Below I process events with an anonymous event handler
         one.setOnAction(
                 e -> System.out.println("Table 1 should be free")
         );
-        
+
         two.setOnAction(
                 e -> System.out.println("Table 2 should be free")
         );
